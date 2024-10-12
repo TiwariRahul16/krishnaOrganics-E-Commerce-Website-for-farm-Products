@@ -1,101 +1,51 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import Cards from "./components/Cards";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  return (
+    <>
+      <div className="w-full content-center h-16 sm:h-36 md:h-44 mt-5 mb-5 text-5xl md:text-9xl text-center font-extrabold italic bg-clip-text text-transparent bg-center bg-cover" style={{ backgroundImage: "url('/images/back.jpg')" }}>
+        KrishnOrganic
+      </div>
+
+      <Cards/>
+      <Cart/>
+      <Checkout/>
+      <div className="w-full">
+        <main className="">
+        </main>
+        <footer className="bg-slate-100 text-base sm:text-xl">
+          <div className="p-2">
+            <p className="pt-2 pb-2 text-lg sm:text-xl">Question and Answer</p>
+            <hr />
+            <p className="pt-1 pb-1 text-base">Q.What kind of products can we find while buying groceries online?</p>
+            <p className="pt-1 pb-1 text-base">A.The online grocery offers various products like dal, flour, spices, cooking masala, salt, sugar, oils, dry fruits, breakfast cereals, cookies, etc. You can scroll, search, compare, and buy all your needed products from one place using your phone only.</p>
+            <hr />
+            <p className="pt-1 pb-1 text-base">Q.What is the quality of online groceries?</p>
+            <p className="pt-1 pb-1 text-base">A.Various brands are offering high-quality groceries online. Items are fresh and ready to be used</p>
+            <hr />
+            <p className="pt-1 pb-1 text-base">Q.Can I use my coupons while purchasing online groceries?</p>
+            <p className="pt-1 pb-1 text-base">A.Yes. You can use relevant coupons in your shopping when paying before check out</p>
+            <hr />
+            <p className="pt-1 pb-1 text-base">Q.Can I shop for my relatives who live in different cities than mine?</p>
+            <p className="pt-1 pb-1 text-base">A.Yes. You can buy it for anyone, and you just need to put their address in the delivery address while purchasing.</p>
+            <hr />
+            <p className="pt-1 pb-1 text-base">Q.While online grocery shopping, can I pay with my debit cards?</p>
+            <p className="pt-1 pb-1 text-base">A.Yes. You can pay using your credit cards, debit cards, online payment methods, and other options</p>
+            <hr />
+          </div>
+          <hr />
+        </footer>
+      </div>
+
+
+
+    </>
   );
 }
